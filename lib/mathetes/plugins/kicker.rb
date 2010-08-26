@@ -24,8 +24,7 @@ module Mathetes
             throw :done  if channel.nil?
             throw :done  if ! @channels.find { |c| c.downcase == channel.name.downcase }
 
-            @watchlist.each do |watch_nick, watchlist|
-              next  if ! ( watch_nick === nick )
+            @watchlist.each do |watchlist|
 
               watchlist.each do |watch|
                 watch['regexps'].each do |r|
