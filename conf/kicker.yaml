@@ -1,0 +1,34 @@
+channels:
+  - '#kohana'
+  - '#kohana-elite'
+watchlist:
+  regexps:
+    - 'kickme'
+    - '\banus\b'
+    - '\bcock\b'
+    - '\bfag\b'
+    - '\bgive me head\b'
+    - '\bnigga\b'
+    - '\bnigger\b'
+    - '\btits\b'
+    - '\btitties\b'
+    - '\bturds?\b'
+    - '\bmy wang\b'
+    - 'anal sex'
+    - 'asshole'
+    - 'my balls'
+  reasons:
+    - 'Watch your language.'
+    - 'Watch your mouth.'
+    - 'Go wash your mouth out with soap.'
+    - 'Keep it clean.'
+    - "Don't be vulgar."
+    - 'No foul language.'
+    - 'No vulgarity.'
+  exempted:
+    - Pistos
+    - Grace
+    - scry
+    - Gherkins
+    - MathetesUnloved
+    - SpyBot
