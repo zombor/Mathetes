@@ -24,23 +24,18 @@ module Mathetes
             throw :done  if channel.nil?
             throw :done  if ! @channels.find { |c| c.downcase == channel.name.downcase }
 
-            @watchlist.each do |watchlist|
+            @watchlist['regexps'].each do |r|
+              next  if Regexp.new(r, true) !~ speech
 
-              watchlist.each do |watch|
-                watch['regexps'].each do |r|
-                  next  if r !~ speech
-
-                  victim = $1 || nick
-                  if ! watch['exempted'] || ! watch['exempted'].include?( victim )
-                    reasons = watch['reasons']
-                    mathetes.kick(
-                      victim,
-                      channel,
-                      reasons[ rand( reasons.size ) ]
-                    )
-                    throw :done
-                  end
-                end
+              victim = $1 || nick
+              if ! @watchlist['exempted'] || ! @watchlist['exempted'].include?( victim )
+                reasons = @watchlist['reasons']
+                mathetes.kick(
+                  victim,
+                  channel,
+                  reasons[ rand( reasons.size ) ]
+                )
+                throw :done
               end
             end
           end

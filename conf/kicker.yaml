@@ -1,6 +1,6 @@
 channels:
-  - '#mathetese'
-  - '#christian'
+  - '#kohana'
+  - '#kohana-elite'
 watchlist:
   regexps:
     - 'kickme'
