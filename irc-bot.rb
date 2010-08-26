@@ -24,8 +24,9 @@ end
 module Mathetes
   class IRCBot
     def initialize
+      @conf = YAML.load_file 'mathetes-config.yaml'
       @irc = SilverPlatter::IRC::Connection.new(
-        "irc.freenode.net",
+        @conf['server'],
         :log => SilverPlatter::Log.to_console( :formatter => SilverPlatter::Log::ColoredDebugConsole )
       )
       reset
